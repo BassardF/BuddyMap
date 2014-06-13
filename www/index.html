@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="globalApp">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -11,12 +11,28 @@
     </head>
     <body>
         <div class="app">
-
+          <div id="login" class="page" ng-controller="LoginCtrl"></div>
+          <div id="register" class="page" ng-controller="RegisterCtrl"></div>
+          <div id="facebookregister" class="page" ng-controller="FacebookRegisterCtrl"></div>
+          <div id="create" class="page" ng-controller="CreateCtrl"></div>
+          <div id="settings" class="page" ng-controller="SettingsCtrl"></div>
+          <div id="map" class="page" ng-controller="MapCtrl"></div>
+          <div id="eventdetails" class="page" ng-controller="EventDetailsCtrl"></div>
+          <div id="invite" class="page" ng-controller="InviteCtrl"></div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/angular/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular/angular.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/pages/global.js"></script>
+        <script type="text/javascript" src="js/pages/login.js"></script>
+        <script type="text/javascript" src="js/pages/register.js"></script>
+        <script type="text/javascript" src="js/pages/facebookregister.js"></script>
+        <script type="text/javascript" src="js/pages/create.js"></script>
+        <script type="text/javascript" src="js/pages/settings.js"></script>
+        <script type="text/javascript" src="js/pages/map.js"></script>
+        <script type="text/javascript" src="js/pages/eventdetails.js"></script>
+        <script type="text/javascript" src="js/pages/invite.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
