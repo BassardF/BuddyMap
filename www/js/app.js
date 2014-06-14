@@ -1,5 +1,7 @@
+// Controller's module
 var phonecatControllers = angular.module('phonecatControllers', []);
 
+// Routing module
 var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
   'phonecatControllers'
