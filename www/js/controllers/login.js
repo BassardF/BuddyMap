@@ -1,9 +1,7 @@
 phonecatControllers.controller('LoginCtrl', function ($scope) {
-  $scope = {
-    labels : {
-        brand : "Team Up"
-    },
-    showLoginForm : false,
-    showFacebookForm : true
+  $scope.labels = {
+    brand : "Team Up"
   };
+  $scope.showFacebookForm = false;
+  $scope.showLoginForm = false;
 });
