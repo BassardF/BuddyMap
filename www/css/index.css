@@ -10,6 +10,16 @@
 }
 
 @font-face {
+    font-family: "Lato-Light";
+    src: url(../fonts/lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: "Lato-LightItalic";
+    src: url(../fonts/lato/Lato-LightItalic.ttf);
+}
+
+@font-face {
     font-family: "Lato-Black";
     src: url(../fonts/lato/Lato-Black.ttf);
 }
@@ -28,16 +38,19 @@
 #login-brand{
   text-align: center;
   margin-top: 40%;
-  margin-Bottom: 40%;
-  font-size: 25px;
-  font-family: "Lato-Black";
-  color : black;
+  font-size: 22px;
+  color : darkgrey;
+}
+#login-bottom-block{
+   position: fixed;
+   bottom: 0;
+   width: 100%;
 }
 
 .login-button{
   padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -46,12 +59,26 @@
 }
 
 .login-button span{
-  font-family: "Lato-Hairline";
-  color : lightgrey;
+  font-family: "Lato-LightItalic";
   float : right;
   margin-right: 40px;
 }
 
 #login-facebook{
   border-bottom: solid 1px lightgrey;
+}
+
+#login button{
+  margin-left: 5%;
+}
+
+#login label{
+  font-family: "Lato-LightItalic";
+  margin-left: 10%;
+}
+
+#login input{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }

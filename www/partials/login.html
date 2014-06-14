@@ -1,7 +1,32 @@
 <div id="login" class="page">
 
-  <div id="login-brand">Team Up</div>
-  <div id="login-login" class="login-button">Login <span>New memeber</span></div>
-  <div id="login-register" class="login-button">Register <span>With your account</span></div>
-  <div id="login-facebook" class="login-button">Facebook <span>Register or login with Fb</span></div>
+  <div id="login-brand">{{labels.brand}}</div>
+  <div id="login-bottom-block">
+    <div id="login-login" class="login-button">Log in <span>Already a memeber?</span></div>
+    <div id="login-login-block">
+      <form class="pure-form pure-form-stacked" ng-show="showLoginForm">
+        <fieldset>
+          <label for="login-login-block-mail-login">Email or Login</label>
+          <input id="login-login-block-mail-login" type="email">
+          <label for="login-login-block-passowrd">Password</label>
+          <input id="login-login-block-passowrd" type="password">
+          <button class="pure-button pure-button-primary">Log in</button>
+        </fieldset>
+      </form>
+    </div>
+    <div id="login-register" class="login-button">Register <span>Create your account</span></div>
+    <div id="login-facebook" class="login-button">Facebook <span>Register made easy</span></div>
+    <div id="login-facebook-block" ng-show="showFacebookForm">
+      <form class="pure-form pure-form-stacked">
+        <fieldset>
+          <label for="login-facebook-block-mail-login">Email or Login</label>
+          <input id="login-facebook-block-mail-login" type="email">
+          <label for="login-facebook-block-passowrd">Password</label>
+          <input id="login-facebook-block-passowrd" type="password">
+          <button class="pure-button pure-button-primary">Log in / Register</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
 </div>
