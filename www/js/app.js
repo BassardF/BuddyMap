@@ -19,7 +19,4 @@ phonecatApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
       });
-  }])
-  .config(function ($compileProvider){
-    $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-});
+  }]);
