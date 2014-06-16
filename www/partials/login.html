@@ -2,7 +2,7 @@
 
   <div id="login-brand">{{labels.brand}}</div>
   <div id="login-bottom-block">
-    <div id="login-login" class="login-button">Log in <span>Already a memeber?</span></div>
+    <div id="login-login" class="login-button" ng-click="loginClick()">Log in <span>Already a memeber?</span></div>
     <div id="login-login-block">
       <form class="pure-form pure-form-stacked" ng-show="showLoginForm">
         <fieldset>
@@ -15,7 +15,7 @@
       </form>
     </div>
     <div id="login-register" class="login-button">Register <span>Create your account</span></div>
-    <div id="login-facebook" class="login-button">Facebook <span>Register made easy</span></div>
+    <div id="login-facebook" class="login-button" ng-click="facebookClick()">Facebook <span>Register made easy</span></div>
     <div id="login-facebook-block" ng-show="showFacebookForm">
       <form class="pure-form pure-form-stacked">
         <fieldset>
