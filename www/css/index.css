@@ -36,10 +36,8 @@
 /* login  */
 
 #login-brand{
-  text-align: center;
-  margin-top: 40%;
-  font-size: 22px;
-  color : darkgrey;
+  width : 50%;
+  height : 80%;
 }
 #login-bottom-block{
    position: fixed;
@@ -56,12 +54,18 @@
   margin-right: auto;
   width: 100%;
   border-bottom: solid 1px lightgrey;
+  background-image : url(../img/White-Noise.png);
+  background-opacity : 0.8;
 }
 
 .login-button span{
   font-family: "Lato-LightItalic";
   float : right;
   margin-right: 40px;
+}
+
+.login-button:hover{
+  cursor: pointer;
 }
 
 #login-login{
@@ -74,11 +78,17 @@
 
 #login label{
   font-family: "Lato-LightItalic";
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 #login input{
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.darkBackground{
+  background-image : url(../img/Grey-Noise.png);
+  color : #ECF0F1;
+  border : none;
 }

@@ -1,29 +1,28 @@
-<div id="login" class="page">
-
-  <div id="login-brand">{{labels.brand}}</div>
+<div id="login" class="page" data-ng-init="init()">
+  <img id="login-brand" src="img/Half-Grey-Logo-Shadow.png">
   <div id="login-bottom-block">
-    <div id="login-login" class="login-button" ng-click="loginClick()">Log in <span>Already a memeber?</span></div>
-    <div id="login-login-block">
-      <form class="pure-form pure-form-stacked" ng-show="showLoginForm">
+    <div id="login-login" ng-class="loginBackground" class="login-button" ng-click="loginClick()">{{labels.login}}<span>{{labels.loginSub}}</span></div>
+    <div id="login-login-block" ng-class="loginBackground" ng-show="showLoginForm">
+      <form name="login-logn-form" class="pure-form pure-form-stacked">
         <fieldset>
-          <label for="login-login-block-mail-login">Email or Login</label>
-          <input id="login-login-block-mail-login" type="email">
-          <label for="login-login-block-passowrd">Password</label>
-          <input id="login-login-block-passowrd" type="password">
-          <button class="pure-button pure-button-primary">Log in</button>
+          <label for="login-login-block-mail-login">{{labels.loginMailLabel}}</label>
+          <input id="login-login-block-mail-login" type="text" ng-model="loginMail" required>
+          <label for="login-login-block-passowrd">{{labels.loginPasswordLabel}}</label>
+          <input id="login-login-block-passowrd" type="password" ng-model="loginPassword" required>
+          <button class="pure-button" ng-click="basicLogin()">{{labels.loginValidate}}</button>
         </fieldset>
       </form>
     </div>
-    <div id="login-register" class="login-button">Register <span>Create your account</span></div>
-    <div id="login-facebook" class="login-button" ng-click="facebookClick()">Facebook <span>Register made easy</span></div>
-    <div id="login-facebook-block" ng-show="showFacebookForm">
-      <form class="pure-form pure-form-stacked">
+    <div id="login-register" class="login-button" ng-click="registerClick()">{{labels.register}}<span>{{labels.registerSub}}</span></div>
+    <div id="login-facebook"  ng-class="facebookBackground" class="login-button" ng-click="facebookClick()">{{labels.facebook}}<span>{{labels.facebookSub}}</span></div>
+    <div id="login-facebook-block" ng-class="facebookBackground" ng-show="showFacebookForm">
+      <form name="login-facebook-form" class="pure-form pure-form-stacked">
         <fieldset>
-          <label for="login-facebook-block-mail-login">Email or Login</label>
-          <input id="login-facebook-block-mail-login" type="email">
-          <label for="login-facebook-block-passowrd">Password</label>
-          <input id="login-facebook-block-passowrd" type="password">
-          <button class="pure-button pure-button-primary">Log in / Register</button>
+          <label for="login-facebook-block-mail-login">{{labels.facebookMail}}</label>
+          <input id="login-facebook-block-mail-login" type="email"  ng-model="facebookMail" required>
+          <label for="login-facebook-block-passowrd">{{labels.facebookPassword}}</label>
+          <input id="login-facebook-block-passowrd" type="password"  ng-model="facebookPassword" required>
+          <button class="pure-button" ng-click="facebookLogin()">{{labels.facebookValidate}}</button>
         </fieldset>
       </form>
     </div>
