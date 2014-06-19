@@ -66,12 +66,12 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
       method : "",
       url : "",
       params : {
-        login : scope.loginMail,
-        password : scope.loginPassword
+        login : $scope.loginMail,
+        password : $scope.loginPassword
       }
     };
     $http(config).success(function(data) {
-      
+
     });
   }
 
@@ -81,12 +81,12 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
       method : "",
       url : "",
       params : {
-        login :scope.facebookMail,
-        password : scope.facebookPassword
+        login :$scope.facebookMail,
+        password : $scope.facebookPassword
       }
     };
     $http(config).success(function(data) {
-      
+
     });
   }
 });
