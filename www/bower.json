@@ -9,7 +9,8 @@
   "dependencies": {
     "angular": "*",
     "pure": "*",
-    "angular-route": "*"
+    "angular-route": "*",
+    "modernizr": "*"
   },
   "devDependencies": {
   }
