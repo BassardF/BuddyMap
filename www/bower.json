@@ -8,9 +8,10 @@
   ],
   "dependencies": {
     "angular": "*",
-    "pure": "*",
     "angular-route": "*",
-    "modernizr": "*"
+    "angular-mocks" : "*",
+    "modernizr": "*",
+    "pure": "*"
   },
   "devDependencies": {
   }
