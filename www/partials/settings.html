@@ -1,1 +1,29 @@
-<div></div>
+<div id="settings" class="page" data-ng-init="init()">
+	<div class="settings-button" ng-click="disconnect()">{{labels.logout}}</div>
+	<div class="settings-button" ng-class="settingsProfileBackground" ng-click="showModifyProfileBlock()">{{labels.showProfileBlock}}</div>
+	<div id="settings-block" ng-class="settingsProfileBackground" ng-show="showProfileForm">
+      <form name="settings-block-form" class="pure-form pure-form-stacked">
+        <fieldset>
+          <label for="settings-mail">{{labels.profileMail}}</label>
+          <input id="settings-mail" type="email" ng-model="profileMail" required>
+          <label for="settings-nickname">{{labels.profileNickname}}</label>
+          <input id="settings-nickname" type="text" ng-model="profileNickname" required>
+          <button class="pure-button" ng-click="updateProfile()">{{labels.updateProfile}}</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="settings-button" ng-class="settingsPwdBackground" ng-click="showModifyPwdBlock()">{{labels.showPwdBlock}}</div>
+    <div id="settings-pwd" ng-class="settingsPwdBackground" ng-show="showPwdForm">
+    	<form name="settings-pwd-form" class="pure-form pure-form-stacked">
+        <fieldset>
+          <label for="settings-pwd-old">{{labels.passwordOld}}</label>
+          <input id="settings-pwd-old" type="password" ng-model="profilePwdOld" required>
+          <label for="settings-pwd-1">{{labels.password1}}</label>
+          <input id="settings-pwd-1" type="password" ng-model="profilePwd1" required>
+          <label for="settings-pwd-2">{{labels.password2}}</label>
+          <input id="settings-pwd-2" type="password" ng-model="profilePwd2" required>
+          <button class="pure-button" ng-click="updatePwd()">{{labels.updatePwd}}</button>
+        </fieldset>
+      </form>
+    </div>
+</div>

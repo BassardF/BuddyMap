@@ -1,7 +1,10 @@
 {
-  "name": "my-project-name",
-  "version": "0.1.0",
+  "name": "Carto",
+  "version": "0.0.1",
   "devDependencies": {
-    "grunt": "~0.4.5"
+    "karma": "*",
+    "karma-chrome-launcher": "*",
+    "karma-firefox-launcher": "*",
+    "karma-jasmine": "*"
   }
 }

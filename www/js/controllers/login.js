@@ -1,11 +1,12 @@
 /*
 * Controller of the login page
 */
-phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, $rootScope, facebook) {
-  $scope.labels = {
+phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, $rootScope, user, facebook) {
+  // Labels : English
+  var engLabels = {
     login : "Log in",
     loginSub : "Already member ?",
-    loginMailLabel : "Email or Login",
+    loginMailLabel : "E-mail or Login",
     loginPasswordLabel : "Password",
     loginValidate : "Log in",
     register : "Register",
@@ -15,19 +16,35 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
     facebookMail : "Email",
     facebookPassword  : "Password",
     facebookValidate : "Log in / Register"
+  },
+  // Labels : French
+  frLabels = {
+    login : "Connexion",
+    loginSub : "Déjà membre ?",
+    loginMailLabel : "E-mail ou Pseudo",
+    loginPasswordLabel : "Mot de passe",
+    loginValidate : "Se connecter",
+    register : "Enregistrement",
+    registerSub : "Créez votre compte",
+    facebook : "Facebook",
+    facebookSub  : "Enregistrement simple",
+    facebookMail : "E-mail",
+    facebookPassword  : "Mot de passe",
+    facebookValidate : "Connexion / Enregistrement"
   };
+
+  if($rootScope.language === "fr")
+    $scope.labels = frLabels;
+  else 
+    $scope.labels = engLabels;
 
   /*
   * Checking if the user is known in the localStorage
   * If he is, upload his datas in the rootscope and redirect to the home
   */
   $scope.init = function(){
-    if (Modernizr.localstorage) {
-      var user = localStorage.getItem("user");
-      if(user){
-        $rootScope.user = user;
-        $location.path("/home");
-      }
+    if(user.isUserInLocalStorage($rootScope)){
+      $location.path("/home");
     }
   }
 
@@ -36,7 +53,7 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
     $scope.showLoginForm = !$scope.showLoginForm;
     $scope.showFacebookForm = false;
     if($scope.showLoginForm){
-      $scope.loginBackground = "darkBackground";
+      $scope.loginBackground = "login-darkBackground";
     } else{
       $scope.loginBackground = "";
     }
@@ -44,7 +61,7 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
   }
 
   //Redirect to the register page
-  $scope.registerClick= function(){
+  $scope.registerClick = function(){
     $location.path("/register");
   }
 
@@ -53,7 +70,7 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
     $scope.showLoginForm = false;
     $scope.showFacebookForm = !$scope.showFacebookForm;
     if($scope.showFacebookForm){
-      $scope.facebookBackground = "darkBackground";
+      $scope.facebookBackground = "login-darkBackground";
     } else{
       $scope.facebookBackground = "";
     }
@@ -62,31 +79,14 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
 
   //Submit the basic login form
   $scope.basicLogin = function(){
-    var config = {
-      method : "",
-      url : "",
-      params : {
-        login : $scope.loginMail,
-        password : $scope.loginPassword
-      }
-    };
-    $http(config).success(function(data) {
-
-    });
+    user.logIn($http, function(data){
+      $rootScope.user = data;
+      $location.path("/home");
+    }, $scope.loginMail, $scope.loginPassword);
   }
 
   //Submit the facebook form
   $scope.facebookLogin = function(){
-    var config = {
-      method : "",
-      url : "",
-      params : {
-        login :$scope.facebookMail,
-        password : $scope.facebookPassword
-      }
-    };
-    $http(config).success(function(data) {
-
-    });
+    
   }
 });
