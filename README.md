@@ -1,11 +1,11 @@
-#Team up
+#BuddyMap
 
-Team up is a mobile application compatible with every IOS and Android device. This mobile application will help you find your friends every time you meet, whatever where you live.
+BuddyMap is a mobile application compatible with every IOS and Android device. This mobile application will help you find your friends every time you meet, whatever where you live.
 
 Our goal is to make an helpful, simple, usefull and design application which can be used everywhere by everyone who could need or enjoy it.
 
 ##Features
-The core idea is to be able to track you friends and see your own trajectory when you indent to meet at some point. 
+The core idea is to be able to track you friends and see your own trajectory when you indent to meet at some point.
 
 In a nutshell you can :
 
@@ -34,4 +34,3 @@ On the server side we rely on :
 * Maven 3
 * Jersey
 * Jax
-
