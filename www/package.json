@@ -1,5 +1,5 @@
 {
-  "name": "Carto",
+  "name": "BuddyMap",
   "version": "0.0.1",
   "devDependencies": {
     "karma": "*",

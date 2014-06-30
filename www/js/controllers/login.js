@@ -1,7 +1,7 @@
 /*
 * Controller of the login page
 */
-phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, $rootScope, user, facebook, location) {
+phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, $rootScope, user, location) {
   // Labels : English
   var engLabels = {
     appName : "BuddyMap",
@@ -100,7 +100,7 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
   */
   $scope.$on('userLoggedIn', function(event, user){
     if(Modernizr.localstorage) {
-      localStorage.setItem("user", JSON.stringify(user));         
+      localStorage.setItem("user", JSON.stringify(user));
     }
     $rootScope.user = user;
     $scope.logIn = true;
@@ -109,6 +109,6 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
 
   //Submit the facebook form
   $scope.facebookLogin = function(){
-    
+
   }
 });
