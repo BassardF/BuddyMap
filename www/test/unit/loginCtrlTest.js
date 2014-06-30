@@ -11,4 +11,8 @@ describe('LoginCtrl', function(){
         expect(scope.labels.loginPasswordLabel).toBe('Password');
     });
 
+    it('should have both panel closed', function(){
+        expect(scope.showLoginForm).not.toBe(true);
+        expect(scope.showFacebookForm).not.toBe(true); 
+    });
 });

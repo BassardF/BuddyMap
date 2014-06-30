@@ -1,7 +1,14 @@
 {
 	"id" : 3,
-	"user" : "MyRulz",
-	"password" : "pws",
+	"pseudo" : "MyRulz",
 	"mail" : "f.bassard@gmail.com",
-	"nickname" : "Myrulz"
+	"pwd" : "pws",
+	"phone" : "0650215699",
+	"houseLatitude" : "2.2156546",
+	"houseLongitude" : "22.5485489",
+	"currentLatitude" : "3.5454",
+	"currentLongitude" : "21.541",
+	"lastRefresh" : "15/06/2014",
+	"friendsList" : ["51", "21", "14"],
+	"eventMap" : "?"
 }

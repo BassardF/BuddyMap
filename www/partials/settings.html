@@ -1,18 +1,42 @@
 <div id="settings" class="page" data-ng-init="init()">
-	<div class="settings-button" ng-click="disconnect()">{{labels.logout}}</div>
-	<div class="settings-button" ng-class="settingsProfileBackground" ng-click="showModifyProfileBlock()">{{labels.showProfileBlock}}</div>
+
+	<div class="pure-g top-bar">
+	    <div class="pure-u-1-3"><img id="setting-chevron" src="img/icons/ionicons/ios7-arrow-left-white.png">Back</div>
+	    <div class="pure-u-1-3"></div>
+	    <div class="pure-u-1-3"></div>
+	</div>
+
+	<div class="settings-button button" ng-click="disconnect()">
+		<div class="settings-icon-wrapper"><img id="setting-logout-img" src="img/icons/ionicons/log-out.png"></div>
+		<div>{{labels.logout}}</div>
+	</div>
+	<div class="settings-button button" ng-class="settingsProfileBackground" ng-click="showModifyProfileBlock()">
+	<div class="settings-icon-wrapper"><img id="setting-profile-img" src="img/icons/ionicons/ios7-person.png"></div>
+	<div>{{labels.showProfileBlock}}</div>
+
+	</div>
+
 	<div id="settings-block" ng-class="settingsProfileBackground" ng-show="showProfileForm">
       <form name="settings-block-form" class="pure-form pure-form-stacked">
         <fieldset>
-          <label for="settings-mail">{{labels.profileMail}}</label>
-          <input id="settings-mail" type="email" ng-model="profileMail" required>
           <label for="settings-nickname">{{labels.profileNickname}}</label>
           <input id="settings-nickname" type="text" ng-model="profileNickname" required>
-          <button class="pure-button" ng-click="updateProfile()">{{labels.updateProfile}}</button>
+          <label for="settings-mail">{{labels.profileMail}}</label>
+          <input id="settings-mail" type="email" ng-model="profileMail" required>
+          <label for="settings-phone">{{labels.profilePhone}}</label>
+          <input id="settings-phone" type="text" ng-model="profilePhone" required>
+          <label for="settings-address">{{labels.profileAddress}}</label>
+          <input id="settings-address" type="text" ng-model="profileAddress" required>
+          <div id="settings-profile-button" class="button" ng-click="updateProfile()">{{labels.updateProfile}}</div>
         </fieldset>
       </form>
     </div>
-    <div class="settings-button" ng-class="settingsPwdBackground" ng-click="showModifyPwdBlock()">{{labels.showPwdBlock}}</div>
+
+    <div class="settings-button button" ng-class="settingsPwdBackground" ng-click="showModifyPwdBlock()">
+    <div class="settings-icon-wrapper"><img id="setting-pwd-img" src="img/icons/ionicons/key.png"></div>
+    <div>{{labels.showPwdBlock}}</div>
+    </div>
+
     <div id="settings-pwd" ng-class="settingsPwdBackground" ng-show="showPwdForm">
     	<form name="settings-pwd-form" class="pure-form pure-form-stacked">
         <fieldset>
@@ -22,8 +46,23 @@
           <input id="settings-pwd-1" type="password" ng-model="profilePwd1" required>
           <label for="settings-pwd-2">{{labels.password2}}</label>
           <input id="settings-pwd-2" type="password" ng-model="profilePwd2" required>
-          <button class="pure-button" ng-click="updatePwd()">{{labels.updatePwd}}</button>
+          <div id="settings-pwd-button" class="button" ng-click="updatePwd()">{{labels.updatePwd}}</div>
         </fieldset>
       </form>
     </div>
+
+    <div class="settings-button button" ng-class="settingsPictureBackground" ng-click="showModifyPictureBlock()">
+    <div class="settings-icon-wrapper"><img id="setting-picture-img" src="img/icons/ionicons/camera.png"></div>
+    {{labels.showPictureBlock}}
+
+    </div>
+
+    <div id="settings-picture" ng-class="settingsPictureBackground" ng-show="showPictureForm">
+    	<form name="settings-picture-form" class="pure-form pure-form-stacked">
+        <fieldset>
+ 
+        </fieldset>
+      </form>
+    </div>
+
 </div>

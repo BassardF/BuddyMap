@@ -1,4 +1,5 @@
 /* fonts */
+
 @font-face {
     font-family: "Lato-Regular";
     src: url(../fonts/lato/Lato-Regular.ttf);
@@ -24,60 +25,67 @@
     src: url(../fonts/lato/Lato-Black.ttf);
 }
 
+@font-face {
+    font-family: "Lucida-Grande";
+    src: url(../fonts/Lucida-grande/lucida-grande.ttf);
+}
+
+
 /* common to all pages  */
 
 .page{
-  width: 100%;
-  height: 100%;
-  font-family: "Lato-Regular", Verdana, Tahoma;
-  color : grey;
+  color: #34495e;
+  line-height: 1.7em;
+  font-family: "Lucida-Grande", Verdana, Tahoma;
+}
+
+.button{
+  padding: 10px;
+  text-align: center;
+  border: 1px solid;
+  background-color: white;
+  vertical-align: middle;
+}
+
+.button-sub{
+  color: #999;
+  font-size: 14px;
+  line-height: 0.8em;
+  text-align: center;
+}
+
+.top-bar{
+  background-color: #e74c3c;
+  color: white;
+  padding : 5px;  
+}
+
+.top-bar *{
+  vertical-align: middle;
+}
+
+input {
+  border-radius: 0px !important;
 }
 
 /* login  */
 
-#login-brand{
-  width : 50%;
-  height : 80%;
-}
 #login-bottom-block{
    position: fixed;
    bottom: 0;
    width: 100%;
 }
 
-.login-button{
-  padding-left: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  border-bottom: solid 1px lightgrey;
-  background-image : url(../img/White-Noise.png);
-  background-opacity : 0.8;
-}
-
-.login-button span{
-  font-family: "Lato-LightItalic";
-  float : right;
-  margin-right: 40px;
-}
-
 .login-button:hover{
   cursor: pointer;
 }
 
-#login-login{
-  border-top: solid 1px lightgrey;
-}
-
 #login button{
-  margin-left: 5%;
+  margin-left: 5%; 
 }
 
 #login label{
-  font-family: "Lato-LightItalic";
+  font-family: "Lucida-Grande";
   margin-left: 5%;
 }
 
@@ -87,8 +95,147 @@
   margin-right: auto;
 }
 
-.darkBackground{
-  background-image : url(../img/Grey-Noise.png);
-  color : #ECF0F1;
-  border : none;
+.login-darkBackground{
+  background-color: #e7685b !important;
+}
+
+#login-picture{
+  display: block;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 200px;
+}
+
+#login-app-title{
+  line-height: 1.7em;
+  font-size: 1em;
+  text-align: center;
+  font-weight: normal;
+}
+
+#login-app-sub{
+  color: #bdc3c7;
+  font-size: 18px;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+#login-login, #login-register, #login-facebook{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e74c3c;
+  border-color: white;
+  color: #ecf0f1;
+}
+
+#login-login .button-sub, #login-register  .button-sub, #login-facebook  .button-sub{
+  color: #bdc3c7;
+}
+
+#login-login{
+  border-bottom: none !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+
+#login-register{
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: none !important;
+}
+
+#login-facebook{
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+/* Registration */
+
+#register-brand{
+  width : 50%;
+}
+
+#register-bottom-block{
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   background-color: #e74c3c;
+   color: #ecf0f1;
+}
+
+#login-facebook-button, #login-login-button{
+  margin-left: 5%;
+  margin-right: 5%;
+  border: none;
+  background-color: #e74c3c;
+  color: #ecf0f1;
+  margin-top: 15px;
+}
+/* Settings */
+
+#setting-chevron{
+  width : 29px;
+  height : 29px;
+}
+
+#setting-logout-img, #setting-profile-img, #setting-pwd-img, #setting-picture-img{
+  width : 35px;
+  height : 35px;
+}
+
+.settings-div-button:hover{
+  cursor : pointer;
+}
+
+#settings label{
+  font-family: "Lucida-Grande";
+  margin-left: 5%;
+}
+
+#settings input{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#settings button{
+  margin-left: 5%;
+}
+
+.settings-button{
+  text-align: left;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #bdc3c7;
+}
+
+.settings-button div{
+  display: inline-block;
+  margin: 0px;
+  vertical-align: middle;
+}
+
+.settings-icon-wrapper{
+  width: 35px;
+  height: 35px;
+}
+
+.settings-button:hover{
+  cursor: pointer;
+}
+
+.settings-darkBackground{
+  border: none;
+}
+
+#settings-pwd-button, #settings-profile-button{
+  margin-left: 5%;
+  margin-right: 5%;
+  border: none;
+  background-color: #e74c3c;
+  color: #ecf0f1;
+  margin-top: 15px;
 }
