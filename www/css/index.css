@@ -76,10 +76,6 @@ input {
    width: 100%;
 }
 
-.login-button:hover{
-  cursor: pointer;
-}
-
 #login button{
   margin-left: 5%; 
 }
@@ -122,7 +118,7 @@ input {
   text-align: center;
 }
 
-#login-login, #login-register, #login-facebook{
+#login-login, #login-register{
   margin-left: auto;
   margin-right: auto;
   background-color: #e74c3c;
@@ -130,13 +126,8 @@ input {
   color: #ecf0f1;
 }
 
-#login-login .button-sub, #login-register  .button-sub, #login-facebook  .button-sub{
-  color: #bdc3c7;
-}
-
 #login-login{
   border-bottom: none !important;
-  border-right: none !important;
   border-left: none !important;
 }
 
@@ -146,26 +137,7 @@ input {
   border-bottom: none !important;
 }
 
-#login-facebook{
-  border-right: none !important;
-  border-bottom: none !important;
-}
-
-/* Registration */
-
-#register-brand{
-  width : 50%;
-}
-
-#register-bottom-block{
-   position: fixed;
-   bottom: 0;
-   width: 100%;
-   background-color: #e74c3c;
-   color: #ecf0f1;
-}
-
-#login-facebook-button, #login-login-button{
+#login-register-button, #login-login-button{
   margin-left: 5%;
   margin-right: 5%;
   border: none;
@@ -173,6 +145,11 @@ input {
   color: #ecf0f1;
   margin-top: 15px;
 }
+
+#login-login-block, #login-register-block{
+    background-color: white;
+}
+
 /* Settings */
 
 #setting-chevron{
@@ -180,7 +157,7 @@ input {
   height : 29px;
 }
 
-#setting-logout-img, #setting-profile-img, #setting-pwd-img, #setting-picture-img{
+#setting-logout-img, #setting-profile-img, #setting-pwd-img, #setting-picture-img, #setting-friends-img{
   width : 35px;
   height : 35px;
 }

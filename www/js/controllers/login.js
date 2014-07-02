@@ -7,34 +7,28 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
     appName : "BuddyMap",
     appSub : "Meetings, made easy.",
     login : "Log in",
-    loginSub : "Already member of the club ?",
-    loginMailLabel : "E-mail or Login",
+    loginLoginLabel : "Mail",
     loginPasswordLabel : "Password",
     loginValidate : "Log in",
     register : "Register",
-    registerSub : "Join us",
-    facebook : "Facebook",
-    facebookSub  : "Login, the easy way",
-    facebookMail : "Email",
-    facebookPassword  : "Password",
-    facebookValidate : "Log in"
+    registerMail : "Mail",
+    registerPassword : "Password",
+    registerValidate : "Register",
+    registerName : "Name"
   },
   // Labels : French
   frLabels = {
     appName : "BuddyMap",
     appSub : "Le rendez-vous, simple.",
     login : "Connexion",
-    loginSub : "Déjà membre ?",
-    loginMailLabel : "E-mail ou Pseudo",
+    loginLoginLabel : "E-mail",
     loginPasswordLabel : "Mot de passe",
     loginValidate : "Se connecter",
     register : "Enregistrement",
-    registerSub : "Créez votre compte",
-    facebook : "Facebook",
-    facebookSub  : "Enregistrement simple",
-    facebookMail : "E-mail",
-    facebookPassword  : "Mot de passe",
-    facebookValidate : "Connexion / Enregistrement"
+    registerMail : "E-Mail",
+    registerPassword : "Mort de passe",
+    registerValidate : "Enregistrer",
+    registerName : "Nom"
   };
 
   //Watched token (true if te user is logged in)
@@ -53,62 +47,47 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
   });
 
   /*
-  * Checking if the user is known in the localStorage
+  * Checking if the user is known in the Storage
   * If he is, upload his datas in the rootscope and redirect to the home
   */
   $scope.init = function(){
-    if(user.isUserInLocalStorage()) $scope.logIn = true;
-    location.geocode('11 rue laetitia, Rueil-Malmaison');
   }
 
   //Access to the basic login form
   $scope.loginClick = function(){
     $scope.showLoginForm = !$scope.showLoginForm;
-    $scope.showFacebookForm = false;
+    $scope.showRegisterForm = false;
     if($scope.showLoginForm){
       $scope.loginBackground = "login-darkBackground";
     } else{
       $scope.loginBackground = "";
     }
-    $scope.facebookBackground = "";
+    $scope.registerBackground = "";
   }
 
-  //Redirect to the register page
+
+  //Access to the register form
   $scope.registerClick = function(){
-    $location.path("/register");
-  }
-
-  //Access to the facebook login/register form
-  $scope.facebookClick = function(){
     $scope.showLoginForm = false;
-    $scope.showFacebookForm = !$scope.showFacebookForm;
-    if($scope.showFacebookForm){
-      $scope.facebookBackground = "login-darkBackground";
+    $scope.showRegisterForm = !$scope.showRegisterForm;
+    if($scope.showRegisterForm){
+      $scope.registerBackground = "login-darkBackground";
     } else{
-      $scope.facebookBackground = "";
+      $scope.registerBackground = "";
     }
     $scope.loginBackground = "";
   }
 
   //Submit the basic login form
   $scope.basicLogin = function(){
-    user.logIn($scope.loginMail, $scope.loginPassword);
+    user.logIn($scope.loginLogin, $scope.loginPassword);
   }
 
   /*
   * Catch the logging event, triggered by the user service
   */
   $scope.$on('userLoggedIn', function(event, user){
-    if(Modernizr.localstorage) {
-      localStorage.setItem("user", JSON.stringify(user));
-    }
     $rootScope.user = user;
     $scope.logIn = true;
   });
-
-
-  //Submit the facebook form
-  $scope.facebookLogin = function(){
-
-  }
 });

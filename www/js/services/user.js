@@ -5,18 +5,11 @@
 phonecatControllers.service('user', ['$http', '$rootScope', '$location', function($http, $rootScope, $location) {
 
 	/*
-	* Test if a user is in the LocalStorage
+	* Test if a user is in the storage
 	* If there is : push him into the give scope and return true
 	*/
-	this.isUserInLocalStorage = function(){
-		if (Modernizr.localstorage) {
-	      var user = JSON.parse(localStorage.getItem("user"));
-	      if(user){
-	      	$rootScope.user = user;
-	        return true;
-	      }
-	    }
-	    return false;
+	this.isUserInStorage = function(){
+
 	}
 
 	/*
@@ -40,12 +33,9 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', functio
 
 	/*
 	* Log out the current user
-	* clean the given scope & the localStorage
+	* clean the given scope & the storage
 	*/
-	this.logOut = function(){		
-		if (Modernizr.localstorage) localStorage.clear();			
-		if($rootScope.user) $rootScope.user = null;
-		$location.path("/login");
+	this.logOut = function(){
 	}
 
 	/*
