@@ -2,9 +2,18 @@
 * Camera service
 */
 phonecatControllers.service('camera', [function() {
-    function getPhoto(success, fail) {
-        navigator.camera.getPicture(success, fail, { quality: 50,
-            destinationType: destinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM });
+    this.getPhoto = function() {
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL
+     });
+
+    function onSuccess(imageData) {
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
     }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
+  }
 }]);

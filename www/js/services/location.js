@@ -13,7 +13,12 @@ phonecatControllers.service('location', ['$http', function($http) {
 	    	params : {}
 	    };
 	    $http(config).success(function(data) {
-	    	console.log(data);
+	    	console.log(
+					{
+						lat : data.results[0].locations[0].latLng.lat,
+						lng : data.results[0].locations[0].latLng.lng
+					}
+				);
 	    });
 	}
 
