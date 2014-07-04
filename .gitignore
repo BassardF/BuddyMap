@@ -1,3 +1,5 @@
 
 <!-- Site specific YARN configuration properties -->
 platforms/**
+www/bower_components/**
+www/node_modules/**
