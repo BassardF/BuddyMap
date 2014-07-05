@@ -26,7 +26,7 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
     loginValidate : "Se connecter",
     register : "Enregistrement",
     registerMail : "E-Mail",
-    registerPassword : "Mort de passe",
+    registerPassword : "Mot de passe",
     registerValidate : "Enregistrer",
     registerName : "Nom"
   };
