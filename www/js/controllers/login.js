@@ -1,7 +1,7 @@
 /*
 * Controller of the login page
 */
-phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, $rootScope, user, location, camera) {
+phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, $rootScope, user, location, camera, storage) {
   // Labels : English
   var engLabels = {
     appName : "BuddyMap",
@@ -51,12 +51,11 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
   * If he is, upload his datas in the rootscope and redirect to the home
   */
   $scope.init = function(){
-    camera.getPhoto();
   }
 
   //Access to the basic login form
   $scope.loginClick = function(){
-    camera.getPhoto();
+    storage.storeUser();
     $scope.showLoginForm = !$scope.showLoginForm;
     $scope.showRegisterForm = false;
     if($scope.showLoginForm){
@@ -70,6 +69,7 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $http, $location, 
 
   //Access to the register form
   $scope.registerClick = function(){
+    storage.retrieveUser();
     $scope.showLoginForm = false;
     $scope.showRegisterForm = !$scope.showRegisterForm;
     if($scope.showRegisterForm){
