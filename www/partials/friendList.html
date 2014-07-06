@@ -20,8 +20,25 @@
       </div>
     </div>
 
-    <div ng-show="favlistBool" ng-hide="!favlistBool"  id="login-app-title"><h2>{{labels.favoriteList}}</h2></div>
-    <div ng-show="contBool" ng-hide="!contBool" id="login-app-title"><h2>{{labels.potentialList}}</h2></div>
-    <div ng-show="searBool" ng-show="!searBool" id="login-app-title"><h2>{{labels.search}}</h2></div>
+    <div ng-show="favlistBool" ng-hide="!favlistBool"  id="friendList-app-title"><h2>{{labels.favoriteList}}</h2></div>
+    <div ng-show="contBool" ng-hide="!contBool" id="friendList-app-title"><h2>{{labels.potentialList}}</h2></div>
+    <div ng-show="searBool" ng-show="!searBool" id="friendList-app-title"><h2>{{labels.search}}</h2></div>
+
+    <div ng-show="favlistBool" ng-hide="!favlistBool" >
+    	<ul>
+			<li ng-repeat="user in users">	
+				<div class="pure-g top-bar">
+	  				<div class="pure-u-1-3"><img id="friendList-chevron" src="img/icons/ionicons/android-contact.png"></div>
+	    			<div class="pure-u-1-3">{{user.firstName}} {{user.lastName}}</div>
+	    			<div class="pure-u-1-3"><input type="checkbox"  name="friend"></div>
+				</div>
+			</li>
+
+    	</ul>
+    	
+
+
+    </div>
+
 
 </div>

@@ -2,6 +2,7 @@ phonecatControllers.controller('FriendListCtrl', function ($scope, $http,$rootSc
 	$scope.favlistBool = true;
 	$scope.contBool = false;
 	$scope.searBool = false;
+	$scope.users = [{firstName: "Mohamed",lastName: "Mokhtari"},{firstName: "Valentin",lastName: "Vieren"}];
 // Labels : English
   var engLabels = {
     back : "Back",
