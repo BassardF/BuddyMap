@@ -45,6 +45,10 @@ phonecatApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/settings.html',
         controller: 'SettingsCtrl'
       }).
+      when('/friendList', {
+        templateUrl: 'partials/friendList.html',
+        controller: 'FriendListCtrl'
+      }).
       otherwise({
         redirectTo: '/login'
       });

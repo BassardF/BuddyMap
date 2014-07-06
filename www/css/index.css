@@ -216,3 +216,24 @@ input {
   color: #ecf0f1;
   margin-top: 15px;
 }
+
+
+/* FriendList */
+
+#friendList-chevron{
+  width : 29px;
+  height : 29px;
+}
+
+#friendList label{
+  font-family: "Lucida-Grande";
+  margin-left: 5%;
+}
+
+.friendList-button{
+  text-align: left;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #bdc3c7;
+}
