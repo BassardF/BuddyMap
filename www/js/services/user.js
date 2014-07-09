@@ -2,7 +2,7 @@
 * User service
 * CRUD and basic tools
 */
-phonecatControllers.service('user', ['$http', '$rootScope', '$location', function($http, $rootScope, $location) {
+phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storage', function($http, $rootScope, $location, storage) {
 
 	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
 
@@ -20,17 +20,17 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', functio
 	*/
 	this.logIn = function(mail, password){
 		var config = {
-	    	method : "Get",
-	    	url : "mock/loginMock.json",
-	    	params : {
-		    	mail : mailOrNickname,
+	    	method : "PUT",
+	    	url : this.baseUrl + "/authentication/" + mail,
+	    	data : {
+					mail : mail,
 		     	password : password,
-		     	timestamp : Date.now()
+		     	clientTimestamp : Date.now()
 	    	}
 	    };
-	    $http(config).success(function(data) {	    	
-	    	//Broadcast the 'userLoggedIn' event	
-    		$rootScope.$broadcast('userLoggedIn', data); 
+	    $http(config).success(function(data) {
+	    	storage.storeUser(mail, password, data);
+				$location.path('/home');
 	    });
 	}
 

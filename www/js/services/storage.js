@@ -10,7 +10,7 @@ phonecatControllers.service('storage', [function() {
         if(this.database === null) this.database = window.openDatabase("BuddyMap", "1.0", "BuddyMap Database", 2000000)
     }
 
-    this.storeUser = function(){
+    this.storeUser = function(mail, password, token){
         this.loadDatabase();
         function successCB() {
 				  alert("success!");
@@ -20,8 +20,8 @@ phonecatControllers.service('storage', [function() {
 				}
         function trans(tx){
 						tx.executeSql("DROP TABLE IF EXISTS 'user'");
-            tx.executeSql("CREATE TABLE user(pseudo VARCHAR(255), mail VARCHAR(255), pwd VARCHAR(255), phone VARCHAR(255))");
-						tx.executeSql("INSERT INTO user VALUES ('Myrulz89','f.bassard@gmail.com', 'pwd','0650215699')");
+            tx.executeSql("CREATE TABLE user(mail VARCHAR(255), password VARCHAR(255), token VARCHAR(255))");
+						tx.executeSql("INSERT INTO user VALUES ('"+mail+"','"+password+"', '"+token+"')");
         }
         this.database.transaction(trans, errorCB, successCB);
     }

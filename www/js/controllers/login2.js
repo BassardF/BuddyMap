@@ -1,7 +1,7 @@
 /*
 * Controller of the login2 page
 */
-phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $location) {
+phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $location, user) {
   // Labels : English
   var engLabels = {
     explain : "Subscribe or register with email",
@@ -22,7 +22,7 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
   // Setting the language
   if($rootScope.language === "fr")
     $scope.labels = frLabels;
-  else 
+  else
     $scope.labels = engLabels;
 
   $scope.email = $rootScope.email;
@@ -33,11 +33,12 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
 
   $scope.next = function(){
     if(typeof $scope.password !== 'undefined'){
-      $rootScope.password = $scope.password;       
+      $rootScope.password = $scope.password;
+      user.logIn($scope.email, $scope.password);
       $location.path('/login3');
     } else {
       alert($scope.labels.passwordAlert);
     }
   }
-  
+
 });
