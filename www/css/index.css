@@ -33,10 +33,17 @@
 
 /* common to all pages  */
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .page{
   color: #34495e;
   line-height: 1.7em;
-  font-family: "Lucida-Grande", Verdana, Tahoma;
+  font-family: "Lato-Light", Verdana, Tahoma !important;
+  width : 100%;
+  min-height : 100%;  
 }
 
 .button{
@@ -68,86 +75,139 @@ input {
   border-radius: 0px !important;
 }
 
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 10;
+  }
+
 /* login  */
 
-#login-bottom-block{
-   position: fixed;
-   bottom: 0;
-   width: 100%;
+#login{
+  padding-top: 40%;
+  color : white;
 }
 
-#login button{
-  margin-left: 5%; 
+#login .overlay{
+  z-index: -1;
+  background: #ff7912; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
-#login label{
-  font-family: "Lucida-Grande";
-  margin-left: 5%;
-}
-
-#login input{
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.login-darkBackground{
-  background-color: #e7685b !important;
-}
-
-#login-picture{
-  display: block;
-  margin-top: 20%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 200px;
-  width: 200px;
-}
-
-#login-app-title{
-  line-height: 1.7em;
-  font-size: 1em;
-  text-align: center;
-  font-weight: normal;
-}
-
-#login-app-sub{
-  color: #bdc3c7;
-  font-size: 18px;
-  line-height: 1.2em;
+#login-email{
+  width : 100%;
+  border : none;
+  height  : 40px;
   text-align: center;
 }
 
-#login-login, #login-register{
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #e74c3c;
-  border-color: white;
-  color: #ecf0f1;
+#login-next{
+  float: right;
+  padding-right: 10px;
 }
 
-#login-login{
-  border-bottom: none !important;
-  border-left: none !important;
+#login-next:hover{
+   cursor: pointer;
 }
 
-#login-register{
-  border-right: none !important;
-  border-left: none !important;
-  border-bottom: none !important;
+/* login2  */
+
+#login2{
+  padding-top: 40%;
+  color : white;
 }
 
-#login-register-button, #login-login-button{
-  margin-left: 5%;
-  margin-right: 5%;
-  border: none;
-  background-color: #e74c3c;
-  color: #ecf0f1;
-  margin-top: 15px;
+#login2 .overlay{
+  z-index: -1;
+  background: #ff7912; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
-#login-login-block, #login-register-block{
-    background-color: white;
+#login2-password{
+  width : 100%;
+  border : none;
+  height  : 40px;
+  text-align: center;
+}
+
+#login2-next{
+  float: right;
+  padding-right: 10px;
+  font-family: "Lato-Light", Verdana, Tahoma !important;
+}
+
+#login2-back{
+  padding-left: 10px;
+  font-family: "Lato-Light", Verdana, Tahoma !important;
+}
+
+#login2-next:hover, #login2-back:hover{
+   cursor: pointer;
+}
+
+#login2-email{
+  text-align: left;
+}
+
+/* login3  */
+
+#login3{
+  padding-top: 40%;
+  color : white;
+}
+
+#login3 .overlay{
+  z-index: -1;
+  background: #ff7912; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
+}
+
+#login3-nickname{
+  width : 100%;
+  border : none;
+  height  : 40px;
+  text-align: center;
+}
+
+#login3-next{
+  float: right;
+  padding-right: 10px;
+  font-family: "Lato-Light", Verdana, Tahoma !important;
+}
+
+#login3-back{
+  padding-left: 10px;
+  font-family: "Lato-Light", Verdana, Tahoma !important;
+}
+
+#login3-next:hover, #login3-back:hover{
+   cursor: pointer;
+}
+
+#login3-email{
+  text-align: left;
 }
 
 /* Settings */
@@ -215,4 +275,25 @@ input {
   background-color: #e74c3c;
   color: #ecf0f1;
   margin-top: 15px;
+}
+
+
+/* FriendList */
+
+#friendList-chevron{
+  width : 29px;
+  height : 29px;
+}
+
+#friendList label{
+  font-family: "Lucida-Grande";
+  margin-left: 5%;
+}
+
+.friendList-button{
+  text-align: left;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #bdc3c7;
 }

@@ -4,6 +4,8 @@
 */
 phonecatControllers.service('user', ['$http', '$rootScope', '$location', function($http, $rootScope, $location) {
 
+	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
+
 	/*
 	* Test if a user is in the storage
 	* If there is : push him into the give scope and return true
@@ -16,13 +18,14 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', functio
 	* Log in the user
 	* broadcast result
 	*/
-	this.logIn = function(mailOrNickname, password){
+	this.logIn = function(mail, password){
 		var config = {
 	    	method : "Get",
 	    	url : "mock/loginMock.json",
 	    	params : {
-		    	login : mailOrNickname,
-		     	pwd : password
+		    	mail : mailOrNickname,
+		     	password : password,
+		     	timestamp : Date.now()
 	    	}
 	    };
 	    $http(config).success(function(data) {	    	
@@ -36,25 +39,20 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', functio
 	* clean the given scope & the storage
 	*/
 	this.logOut = function(){
+
 	}
 
 	/*
 	* Register a new user
 	*/
-	this.register = function(mail, pseudo, currentLatitude, currentLongitude, houseLatitude, houseLongitude, pwd){
+	this.register = function(mail, password, pseudo){
 		var config = {
 	    	method : "POST",
-	    	url : "mock/users",
-	    	params : {
+	    	url : this.baseUrl + "/users",
+	    	data : {
 		    	"mail" : mail,
 			    "pseudo" : pseudo,
-			    "currentLatitude" : currentLatitude,
-			    "currentLongitude" : currentLongitude,
-			    "houseLatitude" : houseLatitude,
-			    "houseLongitude" : houseLongitude,
-			    "lastRefresh" : null,
-			    "pwd" : pwd,
-			    timestamp : Date.now()
+			    "password" : password,
 	    	}
 	    };
 	    $http(config).success(function(data) {

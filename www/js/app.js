@@ -13,6 +13,14 @@ phonecatApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
       }).
+      when('/login2', {
+        templateUrl: 'partials/login2.html',
+        controller: 'LoginCtrl2'
+      }).
+      when('/login3', {
+        templateUrl: 'partials/login3.html',
+        controller: 'LoginCtrl3'
+      }).
       when('/home', {
         templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
@@ -44,6 +52,10 @@ phonecatApp.config(['$routeProvider', function($routeProvider) {
        when('/settings', {
         templateUrl: 'partials/settings.html',
         controller: 'SettingsCtrl'
+      }).
+      when('/friendList', {
+        templateUrl: 'partials/friendList.html',
+        controller: 'FriendListCtrl'
       }).
       otherwise({
         redirectTo: '/login'
