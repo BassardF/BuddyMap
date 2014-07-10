@@ -25,7 +25,11 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
   else
     $scope.labels = engLabels;
 
-  $scope.email = $rootScope.email;
+  $scope.init = function(){
+    // get the mail from the rootscope
+    $scope.email = $rootScope.email;
+  }
+
 
   $scope.back = function(){
     $location.path('/login');
@@ -35,7 +39,6 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
     if(typeof $scope.password !== 'undefined'){
       $rootScope.password = $scope.password;
       user.logIn($scope.email, $scope.password);
-      $location.path('/login3');
     } else {
       alert($scope.labels.passwordAlert);
     }

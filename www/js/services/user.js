@@ -31,6 +31,9 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 	    $http(config).success(function(data) {
 	    	storage.storeUser(mail, password, data);
 				$location.path('/home');
+	    }).
+	    error(function(data, status, headers, config) {
+	      $location.path('/login3');
 	    });
 	}
 

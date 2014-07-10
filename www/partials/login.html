@@ -1,6 +1,6 @@
-<div id="login" class="page">
+<div id="login" class="page" data-ng-init="init()">
   <div class="overlay"></div>
-  <div id="login-center-block">  
+  <div id="login-center-block">
     <div id="login-explain">{{labels.explain}}</div>
     <input id="login-email" type="email" placeholder="{{labels.placeholder}}" ng-model="email">
     <div id="login-next" ng-click="next()">{{labels.next}}</div>
