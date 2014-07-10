@@ -14,6 +14,18 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 
 	}
 
+	this.mailExists = function(mail){
+		var config = {
+		    	method : "HEAD",
+		    	url : this.baseUrl + "/users?mail=" + mail
+		    };
+		    $http(config).success(function() {
+		    	return true;
+		    }).
+		    error(function(data, status, headers, config) {
+		      	return false;
+		    });
+	}
 	/*
 	* Log in the user
 	* broadcast result
