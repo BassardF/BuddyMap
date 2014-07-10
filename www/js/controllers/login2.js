@@ -30,6 +30,13 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
     $scope.email = $rootScope.email;
   }
 
+  $scope.$on('logIn', function(event, loginSuccessful){
+	 if(loginSuccessful){
+		 $location.path('/home');
+	 }else{
+		 
+	 }
+  });
 
   $scope.back = function(){
     $location.path('/login');
@@ -38,14 +45,11 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
   $scope.next = function(){
     if(typeof $scope.password !== 'undefined'){
         $rootScope.password = $scope.password;
-        user.mailExists($scope.email).then(function(exist){
-        	if(exist){
-        		user.logIn($scope.email, $scope.password);
-        	}else{
-        		$location.path("/login3");
-        	}
-        });
-      
+        if($rootScope.isLoginMode){
+        	user.logIn($scope.email, $scope.password);
+        }else{
+        	$location.path("/login3");
+        }
     } else {
       alert($scope.labels.passwordAlert);
     }

@@ -19,11 +19,11 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 		    	method : "HEAD",
 		    	url : this.baseUrl + "/users?mail=" + mail
 		    };
-		return $http(config).success(function() {
-		    	return true;
+		$http(config).success(function() {
+				$rootScope.$broadcast('mailExists', true);
 		    }).
 		    error(function(data, status, headers, config) {
-		      	return false;
+		    	$rootScope.$broadcast('mailExists', false);
 		    });
 	}
 	/*
@@ -42,10 +42,10 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 	    };
 	    $http(config).success(function(data) {
 	    	storage.storeUser(mail, password, data);
-				$location.path('/home');
+	    	$rootScope.$broadcast('logIn', true);
 	    }).
 	    error(function(data, status, headers, config) {
-	      $location.path('/login3');
+	    	$rootScope.$broadcast('logIn', false);
 	    });
 	}
 
@@ -71,8 +71,11 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 	    	}
 	    };
 	    $http(config).success(function(data) {
-
-	    });
+	    	$rootScope.$broadcast('register', true);
+	    }).
+	    error(function(data, status, headers, config) {
+	    	$rootScope.$broadcast('register', false);
+		});
 	}
 
 	/*

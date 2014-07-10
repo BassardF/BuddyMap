@@ -32,6 +32,15 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
     $location.path('/login');
   }
 
+  $scope.$on('register', function(event, isRegistered){
+	  if(isRegistered){
+		  $location.path('/home');
+	  }else{
+		  
+	  }
+	 
+  });
+  
   $scope.next = function(){
     if(typeof $scope.nickname !== 'undefined'){
       user.register($scope.email, $scope.password, $scope.nickname);

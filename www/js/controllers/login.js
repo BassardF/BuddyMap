@@ -1,7 +1,7 @@
 /*
 * Controller of the login page
 */
-phonecatControllers.controller('LoginCtrl', function ($scope, $location, $rootScope, storage) {
+phonecatControllers.controller('LoginCtrl', function ($scope, $location, $rootScope, storage, user) {
   // Labels : English
   var engLabels = {
     explain : "Subscribe or register to start using BuddyMap",
@@ -33,12 +33,21 @@ phonecatControllers.controller('LoginCtrl', function ($scope, $location, $rootSc
       $location.path('/home');
     }
   });
+  
+  $scope.$on('mailExists', function(event, exist){
+	  if(exist){
+		  $rootScope.isLoginMode = true;
+	  }else{
+		  $rootScope.isLoginMode = false;
+	  }
+	  $location.path('/login2');
+  });
 
   // Attempt to log in or register
   $scope.next = function(){
     if(typeof $scope.email !== 'undefined'){
-      $rootScope.email = $scope.email;
-      $location.path('/login2');
+        $rootScope.email = $scope.email;
+    	user.mailExists($scope.email);
     } else {
       alert($scope.labels.mailAlert);
     }
