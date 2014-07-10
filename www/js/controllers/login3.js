@@ -29,12 +29,23 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
   $scope.password = $rootScope.password;
 
   $scope.back = function(){
-    $location.path('/login');
+    $location.path('/login2');
   }
+  
+  $scope.$on('logIn', function(event, loginObj){
+		 if(loginObj.logIn){
+			 delete $rootScope.password; 
+			 delete $scope.password;
+			 $rootScope.token = loginObj.token;
+			 $location.path('/home');
+		 }else{
+			 
+		 }
+  });
 
-  $scope.$on('register', function(event, isRegistered){
-	  if(isRegistered){
-		  $location.path('/home');
+  $scope.$on('register', function(event, register){
+	  if(register.isRegistered){
+		  user.logIn(register.user.mail, register.user.password);
 	  }else{
 		  
 	  }

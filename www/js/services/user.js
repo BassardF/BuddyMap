@@ -41,8 +41,8 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 	    	}
 	    };
 	    $http(config).success(function(data) {
-	    	storage.storeUser(mail, password, data);
-	    	$rootScope.$broadcast('logIn', true);
+	    	storage.storeUser(mail, data);
+	    	$rootScope.$broadcast('logIn', {'logIn' : true, 'token':data});
 	    }).
 	    error(function(data, status, headers, config) {
 	    	$rootScope.$broadcast('logIn', false);
@@ -70,8 +70,8 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 			    "password" : password,
 	    	}
 	    };
-	    $http(config).success(function(data) {
-	    	$rootScope.$broadcast('register', true);
+	    $http(config).success(function() {
+	    	$rootScope.$broadcast('register', {'isRegistered':true, 'user':{'mail':mail, 'password':password}});
 	    }).
 	    error(function(data, status, headers, config) {
 	    	$rootScope.$broadcast('register', false);

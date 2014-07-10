@@ -30,8 +30,11 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
     $scope.email = $rootScope.email;
   }
 
-  $scope.$on('logIn', function(event, loginSuccessful){
-	 if(loginSuccessful){
+  $scope.$on('logIn', function(event, loginObj){
+	 if(loginObj.logIn){
+		 delete $rootScope.password; 
+		 delete $scope.password;
+		 $rootScope.token = loginObj.token;
 		 $location.path('/home');
 	 }else{
 		 

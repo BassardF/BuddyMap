@@ -1,7 +1,7 @@
 /*
 * Controller of the login page
 */
-phonecatControllers.controller('LoginCtrl', function ($scope, $location, $rootScope, storage, user) {
+phonecatControllers.controller('LoginCtrl', function ($location, $scope, $rootScope, storage, user) {
   // Labels : English
   var engLabels = {
     explain : "Subscribe or register to start using BuddyMap",
