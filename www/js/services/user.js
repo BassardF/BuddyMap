@@ -19,7 +19,7 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 		    	method : "HEAD",
 		    	url : this.baseUrl + "/users?mail=" + mail
 		    };
-		    $http(config).success(function() {
+		return $http(config).success(function() {
 		    	return true;
 		    }).
 		    error(function(data, status, headers, config) {

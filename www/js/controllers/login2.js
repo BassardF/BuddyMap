@@ -38,11 +38,13 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
   $scope.next = function(){
     if(typeof $scope.password !== 'undefined'){
         $rootScope.password = $scope.password;
-        if(user.mailExists($scope.email)){
-        	user.logIn($scope.email, $scope.password);
-        }else{
-        	$location.path("/login3");
-        }
+        user.mailExists($scope.email).then(function(exist){
+        	if(exist){
+        		user.logIn($scope.email, $scope.password);
+        	}else{
+        		$location.path("/login3");
+        	}
+        });
       
     } else {
       alert($scope.labels.passwordAlert);
