@@ -8,7 +8,10 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
     placeholder : "Nickname",
     next : "Next",
     back : "Back",
-    nickeNameAlert : "Filling your nickname is required"
+    nickeNameAlert : "Filling your nickname is required",
+    registrationError : "Unable to create your account, try again",
+    registrationConflictError : "This account already exists !",
+    loginError : "Your account has been created but login failed, try to connect"
   },
   // Labels : French
   frLabels = {
@@ -16,7 +19,10 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
     placeholder : "Pseudo",
     next : "Suivant",
     back : "prÃ©cÃ©dent",
-    nickeNameAlert : "Votre pseudo est manquant"
+    nickeNameAlert : "Votre pseudo est manquant",
+    registrationError : "Une erreur est survenue pendant la création de votre compte, veuillez réessayer",
+    registrationConflictError : "Ce compte existe déjà !",
+    loginError : "Votre compte a été créé mais une erreur est survenue lors de votre connexion, veuillez vous connecter"
   };
 
   // Setting the language
@@ -39,7 +45,8 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
 			 $rootScope.token = loginObj.token;
 			 $location.path('/home');
 		 }else{
-			 
+			 alert($scope.labels.loginError);
+			 $location.path('/login');
 		 }
   });
 
@@ -47,7 +54,12 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
 	  if(register.isRegistered){
 		  user.logIn(register.user.mail, register.user.password);
 	  }else{
-		  
+		  if(register.status === 409){
+			  alert($scope.labels.registrationConflictError);
+			  $location.path('/login');
+		  }else{
+			  alert($scope.labels.registrationError);	
+		  }
 	  }
 	 
   });
