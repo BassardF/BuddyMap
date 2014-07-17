@@ -1,8 +1,12 @@
 <div id="login" class="page" data-ng-init="init()">
   <div class="overlay"></div>
+  <img id="login-logo" src="img/White-Logo.png">
+  <div id="login-brand">{{labels.brand}}</div>
   <div id="login-center-block">
     <div id="login-explain">{{labels.explain}}</div>
     <input id="login-email" type="email" placeholder="{{labels.placeholder}}" ng-model="email">
-    <div id="login-next" ng-click="next()">{{labels.next}}</div>
+    <div id="login-next-wrapper">
+      <div id="login-next" ng-click="next()">{{labels.next}}</div>
+    </div>
   </div>
 </div>

@@ -4,13 +4,15 @@
 phonecatControllers.controller('LoginCtrl', function ($location, $scope, $rootScope, storage, user) {
   // Labels : English
   var engLabels = {
-    explain : "Subscribe or register to start using BuddyMap",
+    brand : "BuddyMap",
+    explain : "Subscribe or register to start",
     placeholder : "Email address",
     next : "Next",
     mailAlert : "Your mail appears to be invalid"
   },
   // Labels : French
   frLabels = {
+    brand : "BuddyMap",
     explain : "Inscrit ou connecte toi pour commencer à utiliser BuddyMap",
     placeholder : "Adresse mail",
     next : "Suivant",
@@ -35,7 +37,7 @@ phonecatControllers.controller('LoginCtrl', function ($location, $scope, $rootSc
         });
     }
   });
-  
+
   $scope.$on('mailExists', function(event, exist){
 	  if(exist){
 		  $rootScope.isLoginMode = true;

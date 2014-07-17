@@ -4,6 +4,7 @@
 phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $location, user) {
   // Labels : English
   var engLabels = {
+    brand : "BuddyMap",
     explain : "Subscribe or register with email",
     placeholder : "Password",
     next : "Next",
@@ -13,6 +14,7 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
   },
   // Labels : French
   frLabels = {
+    brand : "BuddyMap",
     explain : "Inscrit ou connecte toi avec l'email",
     placeholder : "Mot de passe",
     next : "Suivant",
@@ -34,7 +36,7 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
 
   $scope.$on('logIn', function(event, loginObj){
 	 if(loginObj.logIn){
-		 delete $rootScope.user.password; 
+		 delete $rootScope.user.password;
 		 delete $scope.password;
 		 $rootScope.user.token = loginObj.token;
 		 $location.path('/home');

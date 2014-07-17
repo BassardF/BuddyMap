@@ -43,7 +43,7 @@ html, body {
   line-height: 1.7em;
   font-family: "Lato-Light", Verdana, Tahoma !important;
   width : 100%;
-  min-height : 100%;  
+  min-height : 100%;
 }
 
 .button{
@@ -64,7 +64,7 @@ html, body {
 .top-bar{
   background-color: #e74c3c;
   color: white;
-  padding : 5px;  
+  padding : 5px;
 }
 
 .top-bar *{
@@ -73,6 +73,7 @@ html, body {
 
 input {
   border-radius: 0px !important;
+  padding : 0px !important;
 }
 
 .overlay {
@@ -88,8 +89,24 @@ input {
 /* login  */
 
 #login{
-  padding-top: 40%;
   color : white;
+  padding-top : 20%;
+}
+
+#login-center-block{
+  margin-top: 30%;
+}
+
+#login-logo{
+  display : block;
+  height : 50%;
+  width : 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login-brand{
+  text-align : center;
 }
 
 #login .overlay{
@@ -111,9 +128,16 @@ input {
   text-align: center;
 }
 
+#login-explain{
+  padding-left : 10px;
+}
+
+#login-next-wrapper{
+  padding-right: 10px;
+}
+
 #login-next{
   float: right;
-  padding-right: 10px;
 }
 
 #login-next:hover{
@@ -123,8 +147,20 @@ input {
 /* login2  */
 
 #login2{
-  padding-top: 40%;
   color : white;
+  padding-top : 20%;
+}
+
+#login2-logo{
+  display : block;
+  height : 50%;
+  width : 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login2-brand{
+  text-align : center;
 }
 
 #login2 .overlay{
@@ -137,6 +173,10 @@ input {
   background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
+}
+
+#login2-center-block{
+  margin-top: 30%;
 }
 
 #login2-password{
@@ -161,16 +201,30 @@ input {
    cursor: pointer;
 }
 
-#login2-email{
+#login2-email, #login2-explain{
   text-align: left;
+  padding-left : 10px;
 }
 
 /* login3  */
 
 #login3{
-  padding-top: 40%;
   color : white;
+  padding-top : 20%;
 }
+
+#login3-logo{
+  display : block;
+  height : 50%;
+  width : 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login3-brand{
+  text-align : center;
+}
+
 
 #login3 .overlay{
   z-index: -1;
@@ -182,6 +236,10 @@ input {
   background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
+}
+
+#login3-center-block{
+  margin-top: 30%;
 }
 
 #login3-nickname{
@@ -206,8 +264,9 @@ input {
    cursor: pointer;
 }
 
-#login3-email{
+#login3-email, #login3-explain{
   text-align: left;
+  padding-left : 10px;
 }
 
 /* Settings */

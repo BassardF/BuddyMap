@@ -1,6 +1,8 @@
 <div id="login3" class="page" data-ng-init="">
   <div class="overlay"></div>
-  <div id="login3-center-block">  
+  <img id="login3-logo" src="img/White-Logo.png">
+  <div id="login3-brand">{{labels.brand}}</div>
+  <div id="login3-center-block">
     <div id="login3-explain">{{labels.explain}}</div>
     <div id="login3-email">{{email}}</div>
     <input id="login3-nickname" type="text" placeholder="{{labels.placeholder}}" ng-model="nickname">
@@ -11,6 +13,6 @@
 	    <div class="pure-u-1-2">
 	    	<div id="login3-next" ng-click="next()">{{labels.next}}</div>
 	    </div>
-	</div>    
+	</div>
   </div>
 </div>

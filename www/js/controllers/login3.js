@@ -4,6 +4,7 @@
 phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootScope, user) {
   // Labels : English
   var engLabels = {
+    brand : "BuddyMap",
     explain : "Subscribe or register with email",
     placeholder : "Nickname",
     next : "Next",
@@ -15,20 +16,21 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
   },
   // Labels : French
   frLabels = {
+    brand : "BuddyMap",
     explain : "Inscrit ou connecte toi avec l'email",
     placeholder : "Pseudo",
     next : "Suivant",
     back : "prÃ©cÃ©dent",
     nickeNameAlert : "Votre pseudo est manquant",
-    registrationError : "Une erreur est survenue pendant la création de votre compte, veuillez réessayer",
-    registrationConflictError : "Ce compte existe déjà !",
-    loginError : "Votre compte a été créé mais une erreur est survenue lors de votre connexion, veuillez vous connecter"
+    registrationError : "Une erreur est survenue pendant la crï¿½ation de votre compte, veuillez rï¿½essayer",
+    registrationConflictError : "Ce compte existe dï¿½jï¿½ !",
+    loginError : "Votre compte a ï¿½tï¿½ crï¿½ï¿½ mais une erreur est survenue lors de votre connexion, veuillez vous connecter"
   };
 
   // Setting the language
   if($rootScope.language === "fr")
     $scope.labels = frLabels;
-  else 
+  else
     $scope.labels = engLabels;
 
   $scope.email = $rootScope.user.email;
@@ -37,10 +39,10 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
   $scope.back = function(){
     $location.path('/login2');
   }
-  
+
   $scope.$on('logIn', function(event, loginObj){
 		 if(loginObj.logIn){
-			 delete $rootScope.user.password; 
+			 delete $rootScope.user.password;
 			 delete $scope.password;
 			 $rootScope.user.token = loginObj.token;
 			 $location.path('/home');
@@ -58,12 +60,12 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
 			  alert($scope.labels.registrationConflictError);
 			  $location.path('/login');
 		  }else{
-			  alert($scope.labels.registrationError);	
+			  alert($scope.labels.registrationError);
 		  }
 	  }
-	 
+
   });
-  
+
   $scope.next = function(){
     if(typeof $scope.nickname !== 'undefined'){
       user.register($scope.email, $scope.password, $scope.nickname);
