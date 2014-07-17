@@ -3,10 +3,13 @@
 */
 phonecatControllers.service('crypto', [ function() {
 
-  var seed = 'Fmjtd%7Cluur2g0t2g%2C2l%3Do5-9atxd4';
+	this.hashAlgorythmUsed = "SHA256";
+	
+	this.hashSHA256 = function(input, passphrase){
+		return CryptoJS.HmacSHA256(input, passphrase);
+	}
 
-  this.hash = function(input){
-    return CryptoJS.HmacSHA256(input, seed);
-  }
-
+	this.getHashAlgorythmUsed = function(){
+		return this.hashAlgorythmUsed;
+	}
 }]);
