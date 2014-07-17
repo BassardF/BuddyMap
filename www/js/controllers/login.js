@@ -29,8 +29,10 @@ phonecatControllers.controller('LoginCtrl', function ($location, $scope, $rootSc
 
   $scope.$on('retrieveUser', function(event, user) {
     if(Object.keys(user).length !== 0){
-      $rootScope.user = user;
-      $location.path('/home');
+    	$scope.$apply(function() {
+    		$scope.user = user;
+    	    $location.path('/home');
+        });
     }
   });
   
