@@ -9,7 +9,7 @@ phonecatControllers.service('storage', [ '$rootScope', function($rootScope) {
         if(this.database === null) this.database = window.openDatabase("BuddyMap", "1.0", "BuddyMap Database", 2000000)
     }
 
-    this.storeUser = function(mail, token){
+    this.storeUser = function(email, token){
 
         this.loadDatabase();
 
@@ -21,8 +21,8 @@ phonecatControllers.service('storage', [ '$rootScope', function($rootScope) {
 
         function trans(tx){
 						tx.executeSql("DROP TABLE IF EXISTS 'user'");
-            tx.executeSql("CREATE TABLE user(mail VARCHAR(255), token VARCHAR(255))");
-						tx.executeSql("INSERT INTO user VALUES ('"+mail+"','"+token+"')");
+            tx.executeSql("CREATE TABLE user(email VARCHAR(255), token VARCHAR(255))");
+						tx.executeSql("INSERT INTO user VALUES ('"+email+"','"+token+"')");
         }
 
         this.database.transaction(trans, errorCB, successCB);

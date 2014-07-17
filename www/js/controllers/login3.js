@@ -31,8 +31,8 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
   else 
     $scope.labels = engLabels;
 
-  $scope.email = $rootScope.email;
-  $scope.password = $rootScope.password;
+  $scope.email = $rootScope.user.email;
+  $scope.password = $rootScope.user.password;
 
   $scope.back = function(){
     $location.path('/login2');
@@ -40,9 +40,9 @@ phonecatControllers.controller('LoginCtrl3', function ($scope, $location, $rootS
   
   $scope.$on('logIn', function(event, loginObj){
 		 if(loginObj.logIn){
-			 delete $rootScope.password; 
+			 delete $rootScope.user.password; 
 			 delete $scope.password;
-			 $rootScope.token = loginObj.token;
+			 $rootScope.user.token = loginObj.token;
 			 $location.path('/home');
 		 }else{
 			 alert($scope.labels.loginError);

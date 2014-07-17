@@ -4,8 +4,9 @@
 */
 phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storage', function($http, $rootScope, $location, storage) {
 
-	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
-
+	//this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
+	this.baseUrl = 'http://localhost:8080/BuddyMap';
+	
 	/*
 	* Test if a user is in the storage
 	* If there is : push him into the give scope and return true

@@ -29,14 +29,14 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
 
   $scope.init = function(){
     // get the mail from the rootscope
-    $scope.email = $rootScope.email;
+    $scope.email = $rootScope.user.email;
   }
 
   $scope.$on('logIn', function(event, loginObj){
 	 if(loginObj.logIn){
-		 delete $rootScope.password; 
+		 delete $rootScope.user.password; 
 		 delete $scope.password;
-		 $rootScope.token = loginObj.token;
+		 $rootScope.user.token = loginObj.token;
 		 $location.path('/home');
 	 }else{
 		 alert($scope.labels.wrongPassword);
@@ -49,7 +49,7 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
 
   $scope.next = function(){
     if(typeof $scope.password !== 'undefined'){
-        $rootScope.password = $scope.password;
+        $rootScope.user.password = $scope.password;
         if($rootScope.isLoginMode){
         	user.logIn($scope.email, $scope.password);
         }else{

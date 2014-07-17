@@ -30,7 +30,7 @@ phonecatControllers.controller('LoginCtrl', function ($location, $scope, $rootSc
   $scope.$on('retrieveUser', function(event, user) {
     if(Object.keys(user).length !== 0){
     	$scope.$apply(function() {
-    		$scope.user = user;
+    		$rootScope.user = user;
     	    $location.path('/home');
         });
     }
@@ -48,7 +48,8 @@ phonecatControllers.controller('LoginCtrl', function ($location, $scope, $rootSc
   // Attempt to log in or register
   $scope.next = function(){
     if(typeof $scope.email !== 'undefined'){
-        $rootScope.email = $scope.email;
+    	$rootScope.user = {};
+        $rootScope.user.email = $scope.email;
     	user.mailExists($scope.email);
     } else {
       alert($scope.labels.mailAlert);

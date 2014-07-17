@@ -1,4 +1,5 @@
-phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event) {
+phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, storage) {
+	
 	// Labels : English
 	  var engLabels = {
 	  },
@@ -12,9 +13,7 @@ phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event) 
 	  else
 	    $scope.labels = engLabels;
 	
-	  $scope.init = function(){
-		  $scope.mail = $rootScope.user.mail;
-		  $scope.nickName = $rootScope.user.pseudo;
-		  event.retrieveEvents();
-	  }
+	  $scope.email = $rootScope.user.email;
+	  $scope.token = $rootScope.user.token;
+	  event.retrieveEvents($scope.email, $scope.token);
 });

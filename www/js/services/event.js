@@ -3,7 +3,8 @@
 */
 phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto) {
 	
-	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
+	//this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
+	this.baseUrl = 'http://localhost:8080/BuddyMap';
 	
 	this.retrieveEvents = function(mail, token){
 		var clientTimestamp = Date.now();
@@ -15,9 +16,9 @@ phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto)
 		}
 		var config = {
 		    	method : "GET",
-		    	url : this.baseUrl + "/events?mail=" + mail,
+		    	url : this.baseUrl + "/users/" + mail + "/events",
 		    	headers : {
-		    		"Authorization" : authorizationHeader;
+		    		"Authorization" : JSON.stringify(authorizationHeader)
 		    	}
 		    };
 		 $http(config).success(function() {
@@ -27,4 +28,4 @@ phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto)
 			 alert("KO "+status);
 		 });
 	}
-});
+}]);
