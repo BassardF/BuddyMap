@@ -8,7 +8,8 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
     placeholder : "Password",
     next : "Next",
     back : "Back",
-    passwordAlert : "Your password must have more than 6 characters"
+    passwordAlert : "Your password must have more than 6 characters",
+    wrongPassword : "Incorrect password"
   },
   // Labels : French
   frLabels = {
@@ -16,7 +17,8 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
     placeholder : "Mot de passe",
     next : "Suivant",
     back : "précédent",
-    passwordAlert : "Mot de passe invalide"
+    passwordAlert : "Mot de passe invalide",
+    wrongPassword : "Mot de passe incorrect"
   };
 
   // Setting the language
@@ -37,7 +39,7 @@ phonecatControllers.controller('LoginCtrl2', function ($scope, $rootScope, $loca
 		 $rootScope.token = loginObj.token;
 		 $location.path('/home');
 	 }else{
-		 
+		 alert($scope.labels.wrongPassword);
 	 }
   });
 
