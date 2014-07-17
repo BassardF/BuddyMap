@@ -26,18 +26,26 @@
 
     <div ng-show="favlistBool" ng-hide="!favlistBool" >
     	<ul>
-			<li ng-repeat="user in users">	
-				<div class="pure-g top-bar">
+				<div ng-repeat="user in users" class="pure-g top-bar">
 	  				<div class="pure-u-1-3"><img id="friendList-chevron" src="img/icons/ionicons/android-contact.png"></div>
 	    			<div class="pure-u-1-3">{{user.firstName}} {{user.lastName}}</div>
 	    			<div class="pure-u-1-3"><input type="checkbox"  name="friend"></div>
 				</div>
-			</li>
-
     	</ul>
-    	
+    </div>
 
-
+    <div ng-show="contBool" ng-hide="!contBool" >
+      <ul>
+        <div ng-repeat="user in potentialUsers" class="pure-g top-bar">
+            <div class="pure-u-1-3"><img id="friendList-chevron" src="img/icons/ionicons/android-contact.png"></div>
+            <div class="pure-u-1-3">{{user.firstName}} {{user.lastName}}</div>
+            <div class="pure-u-1-3"><input type="checkbox"  name="friend"></div>
+        </div>
+      </ul>
+    </div>
+    
+    <div ng-show="searBool" ng-show="!searBool" >
+      <input id="friendList-email" type="text" placeholder="{{labels.placeholder}}" ng-model="searchArea">
     </div>
 
 

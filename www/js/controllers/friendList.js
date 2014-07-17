@@ -3,6 +3,7 @@ phonecatControllers.controller('FriendListCtrl', function ($scope, $http,$rootSc
 	$scope.contBool = false;
 	$scope.searBool = false;
 	$scope.users = [{firstName: "Mohamed",lastName: "Mokhtari"},{firstName: "Valentin",lastName: "Vieren"}];
+  $scope.potentialUsers = [{firstName: "Frank",lastName: "Bassard"},{firstName: "Mock",lastName: "Test"}];
 // Labels : English
   var engLabels = {
     back : "Back",
@@ -10,6 +11,7 @@ phonecatControllers.controller('FriendListCtrl', function ($scope, $http,$rootSc
     favoriteList : "My favorite",
     potentialList : "Potential List",
     search : "Search Friends",
+    placeholder : "Search"
 
   },
   // Labels : French
@@ -19,6 +21,7 @@ phonecatControllers.controller('FriendListCtrl', function ($scope, $http,$rootSc
     favoriteList : "Mes favoris",
     potentialList : "Amis potentiels",
     search : "Retrouve tes amis",
+    placeholder : "Rechercher"
   };
 
   // Setting the language
