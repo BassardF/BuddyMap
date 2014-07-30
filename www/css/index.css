@@ -33,9 +33,13 @@
 
 /* common to all pages  */
 
-html, body {
+html, body{
   height: 100%;
   margin: 0;
+}
+
+.app, .app > *{
+  height : 100%;
 }
 
 .page{
@@ -76,21 +80,19 @@ input {
   padding : 0px !important;
 }
 
-.overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(51,51,51,0.7);
-    z-index: 10;
-  }
-
 /* login  */
 
 #login{
   color : white;
   padding-top : 20%;
+  background: #ff7912; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
 #login-center-block{
@@ -107,18 +109,6 @@ input {
 
 #login-brand{
   text-align : center;
-}
-
-#login .overlay{
-  z-index: -1;
-  background: #ff7912; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
 #login-email{
@@ -149,6 +139,14 @@ input {
 #login2{
   color : white;
   padding-top : 20%;
+  background: #ff7912; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
 #login2-logo{
@@ -161,18 +159,6 @@ input {
 
 #login2-brand{
   text-align : center;
-}
-
-#login2 .overlay{
-  z-index: -1;
-  background: #ff7912; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
 #login2-center-block{
@@ -211,6 +197,14 @@ input {
 #login3{
   color : white;
   padding-top : 20%;
+  background: #ff7912; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
 #login3-logo{
@@ -223,19 +217,6 @@ input {
 
 #login3-brand{
   text-align : center;
-}
-
-
-#login3 .overlay{
-  z-index: -1;
-  background: #ff7912; /* Old browsers */
-  background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
 }
 
 #login3-center-block{

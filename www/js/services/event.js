@@ -2,17 +2,16 @@
 * Event service
 */
 phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto) {
-	
-	//this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
-	this.baseUrl = 'http://localhost:8080/BuddyMap';
-	
+
+	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
+
 	this.retrieveEvents = function(mail, token){
 		var clientTimestamp = Date.now();
 		var authorizationHeader = {
 			"clientTimestamp" : clientTimestamp,
-			"mail" : mail, 
+			"mail" : mail,
 			"hashSignature" : crypto.hashSHA256(mail+clientTimestamp+crypto.getHashAlgorythmUsed(), token),
-			"hashAlgorythm" : "SHA256"	
+			"hashAlgorythm" : "SHA256"
 		}
 		var config = {
 		    	method : "GET",
