@@ -1,6 +1,26 @@
 // Controller's module
 var phonecatControllers = angular.module('phonecatControllers', []);
 
+// Global autofocus directive
+phonecatControllers.directive('focus',
+  function($timeout) {
+    return {
+      scope : {
+        trigger : '@focus'
+      },
+      link : function(scope, element) {
+        scope.$watch('trigger', function(value) {
+          if (value === "true") {
+            $timeout(function() {
+              element[0].focus();
+            });
+          }
+        });
+      }
+    };
+  }
+);
+
 // Routing module
 var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
