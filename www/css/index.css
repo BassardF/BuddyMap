@@ -30,22 +30,23 @@
     src: url(../fonts/Lucida-grande/lucida-grande.ttf);
 }
 
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
 
 /* common to all pages  */
 
-html, body{
+html, body, .app, .app > *{
   height: 100%;
-  margin: 0;
-}
-
-.app, .app > *{
-  height : 100%;
+  margin: 0px;
 }
 
 .page{
   color: #34495e;
   line-height: 1.7em;
-  font-family: "Lato-Light", Verdana, Tahoma !important;
+  font-family: "Roboto-Regular", Verdana, Tahoma !important;
   width : 100%;
   min-height : 100%;
 }
@@ -84,7 +85,6 @@ input {
 
 #login{
   color : white;
-  padding-top : 20%;
   background: #ff7912; /* Old browsers */
   background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
@@ -93,6 +93,11 @@ input {
   background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
+}
+
+#login-header{
+  height: 40px;
+  width : 100%;
 }
 
 #login-center-block{
@@ -138,7 +143,6 @@ input {
 
 #login2{
   color : white;
-  padding-top : 20%;
   background: #ff7912; /* Old browsers */
   background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
@@ -147,6 +151,11 @@ input {
   background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
+}
+
+#login2-header{
+  height: 40px;
+  width : 100%;
 }
 
 #login2-logo{
@@ -175,12 +184,12 @@ input {
 #login2-next{
   float: right;
   padding-right: 10px;
-  font-family: "Lato-Light", Verdana, Tahoma !important;
+  font-family: "Roboto-Regular", Verdana, Tahoma !important;
 }
 
 #login2-back{
   padding-left: 10px;
-  font-family: "Lato-Light", Verdana, Tahoma !important;
+  font-family: "Roboto-Regular", Verdana, Tahoma !important;
 }
 
 #login2-next:hover, #login2-back:hover{
@@ -196,7 +205,6 @@ input {
 
 #login3{
   color : white;
-  padding-top : 20%;
   background: #ff7912; /* Old browsers */
   background: -moz-linear-gradient(top,  #ff7912 0%, #ff600e 44%, #ff450a 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7912), color-stop(44%,#ff600e), color-stop(100%,#ff450a)); /* Chrome,Safari4+ */
@@ -205,6 +213,11 @@ input {
   background: -ms-linear-gradient(top,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #ff7912 0%,#ff600e 44%,#ff450a 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7912', endColorstr='#ff450a',GradientType=0 ); /* IE6-9 */
+}
+
+#login3-header{
+  height: 40px;
+  width : 100%;
 }
 
 #login3-logo{
@@ -233,12 +246,12 @@ input {
 #login3-next{
   float: right;
   padding-right: 10px;
-  font-family: "Lato-Light", Verdana, Tahoma !important;
+  font-family: "Roboto-Regular", Verdana, Tahoma !important;
 }
 
 #login3-back{
   padding-left: 10px;
-  font-family: "Lato-Light", Verdana, Tahoma !important;
+  font-family: "Roboto-Regular", Verdana, Tahoma !important;
 }
 
 #login3-next:hover, #login3-back:hover{
@@ -267,7 +280,7 @@ input {
 }
 
 #settings label{
-  font-family: "Lucida-Grande";
+  font-family: "Roboto-Regular";
   margin-left: 5%;
 }
 
@@ -326,7 +339,7 @@ input {
 }
 
 #friendList label{
-  font-family: "Lucida-Grande";
+  font-family: "Roboto-Regular";
   margin-left: 5%;
 }
 
