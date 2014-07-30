@@ -27,6 +27,7 @@ phonecatControllers.controller('LoginCtrl', function ($location, $scope, $rootSc
 
   $scope.init = function(){
     storage.retrieveUser();
+    document.getElementById('login-email').click();
   }
 
   $scope.$on('retrieveUser', function(event, user) {
