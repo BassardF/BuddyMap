@@ -10,7 +10,7 @@ phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto)
 		var authorizationHeader = {
 			"clientTimestamp" : clientTimestamp,
 			"mail" : mail,
-			"hashSignature" : crypto.hashSHA256(mail+clientTimestamp+crypto.getHashAlgorythmUsed(), token),
+			"hashSignature" : crypto.hashSHA256(mail + clientTimestamp + crypto.getHashAlgorythmUsed(), token),
 			"hashAlgorythm" : "SHA256"
 		}
 		var config = {
@@ -20,11 +20,11 @@ phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto)
 		    		"Authorization" : JSON.stringify(authorizationHeader)
 		    	}
 		    };
-		 $http(config).success(function() {
-			 alert("OK");
+		 $http(config).success(function(data) {
+			 $rootScope.$broadcast('eventsOfUser', data);
 		 }).
 		 error(function(data, status, headers, config) {
-			 alert("KO "+status);
+			 $rootScope.$broadcast('eventsOfUser', false);
 		 });
 	}
 }]);
