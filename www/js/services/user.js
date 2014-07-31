@@ -2,7 +2,7 @@
 * User service
 * CRUD and basic tools
 */
-phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storage', function($http, $rootScope, $location, storage) {
+phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storage', 'crypto', function($http, $rootScope, $location, storage, crypto) {
 
 	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
 
@@ -20,12 +20,36 @@ phonecatControllers.service('user', ['$http', '$rootScope', '$location', 'storag
 		    	url : this.baseUrl + "/users?mail=" + mail
 		    };
 		$http(config).success(function() {
-				$rootScope.$broadcast('mailExists', true);
+					$rootScope.$broadcast('mailExists', true);
 		    }).
 		    error(function(data, status, headers, config) {
 		    	$rootScope.$broadcast('mailExists', false);
 		    });
 	}
+
+	this.userInfo = function(mail, token){
+		var clientTimestamp = Date.now();
+		var authorizationHeader = {
+			"clientTimestamp" : clientTimestamp,
+			"mail" : mail,
+			"hashSignature" : crypto.hashSHA256(mail + clientTimestamp + crypto.getHashAlgorythmUsed(), token),
+			"hashAlgorythm" : "SHA256"
+		}
+		var config = {
+					method : "GET",
+					headers : {
+						"Authorization" : JSON.stringify(authorizationHeader)
+					},
+					url : this.baseUrl + "/users?mail=" + mail
+				};
+		$http(config).success(function(data) {
+					$rootScope.$broadcast('userInfo', data);
+				}).
+				error(function(data, status, headers, config) {
+					$rootScope.$broadcast('userInfo', false);
+				});
+	}
+
 	/*
 	* Log in the user
 	* broadcast result

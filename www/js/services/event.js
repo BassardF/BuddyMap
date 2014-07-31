@@ -5,7 +5,7 @@ phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto)
 
 	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
 
-	this.retrieveEvents = function(mail, token){
+	this.retrieveEvents = function(id, mail, token){
 		var clientTimestamp = Date.now();
 		var authorizationHeader = {
 			"clientTimestamp" : clientTimestamp,
@@ -15,7 +15,7 @@ phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto)
 		}
 		var config = {
 		    	method : "GET",
-		    	url : this.baseUrl + "/users/" + mail + "/events",
+		    	url : this.baseUrl + "/events?idUser=" + id,
 		    	headers : {
 		    		"Authorization" : JSON.stringify(authorizationHeader)
 		    	}

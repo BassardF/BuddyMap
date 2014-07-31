@@ -1,5 +1,5 @@
-phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, storage) {
-	
+phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, user, storage) {
+
 	// Labels : English
 	  var engLabels = {
 	  },
@@ -12,8 +12,19 @@ phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, 
 	    $scope.labels = frLabels;
 	  else
 	    $scope.labels = engLabels;
-	
-	  $scope.email = $rootScope.user.email;
-	  $scope.token = $rootScope.user.token;
-	  event.retrieveEvents($scope.email, $scope.token);
+
+		$scope.init = function(){
+			$scope.email = $rootScope.user.email;
+			$scope.token = $rootScope.user.token;
+			user.userInfo($scope.email, $scope.token);
+		};
+
+		$scope.$on('userInfo', function(event, response){
+			if(response){
+				alert(response);
+				//event.retrieveEvents($scope.email, $scope.token);
+			}else{
+				alert();
+			}
+		});
 });
