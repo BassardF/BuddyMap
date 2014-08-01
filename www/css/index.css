@@ -353,7 +353,7 @@ input {
 
 /* Home */
 
-#home-etop-pic img{
+.home-etop-pic img{
   width : 80%;
   height : 80%;
   border-radius: 50% 50% 50% 50%;
@@ -362,23 +362,23 @@ input {
   margin-right : auto;
 }
 
-#home-ebot-name{
+.home-ebot-name{
   text-align: center;
   font-weight : bold;
 }
 
-#home-ebot-content{
+.home-ebot-content{
   line-height:90%;
   font-size: 13px;
   margin-bottom: 2%;
 }
 
-#home-event{
+.home-event{
   margin-top: 2%;
   margin-bottom: 2%;
 }
 
-#home-etop-date{
+.home-etop-date{
   vertical-align: middle;
   color: #FCAA00;
   display : inline-block;
@@ -386,16 +386,20 @@ input {
   margin-top : 7%;
 }
 
-#home-month-split{
+.home-month-split{
   text-align: center;
   background-color: #FCAA00;
 }
 
-#home-etop-map img{
-  height : 50%;
-  width : 50%;
+.home-etop-map img{
+  height : 70%;
+  width : 70%;
   display : block;
   margin-left : auto;
   margin-right : auto;
-  margin-top : 5%;
+  margin-top : 15%;
+}
+
+.event-tags{
+  color : #1C95E0;
 }
