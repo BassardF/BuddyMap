@@ -1,7 +1,7 @@
 /*
 * Event service
 */
-phonecatControllers.service('event', ['$http', 'crypto', function($http, crypto) {
+phonecatControllers.service('event', ['$http', '$rootScope', 'crypto', function($http, $rootScope, crypto) {
 
 	this.baseUrl = 'http://ec2-54-191-70-54.us-west-2.compute.amazonaws.com/buddyMap';
 

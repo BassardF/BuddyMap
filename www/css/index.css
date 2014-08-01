@@ -350,3 +350,52 @@ input {
   border-right: none;
   border-color: #bdc3c7;
 }
+
+/* Home */
+
+#home-etop-pic img{
+  width : 80%;
+  height : 80%;
+  border-radius: 50% 50% 50% 50%;
+  display : block;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+#home-ebot-name{
+  text-align: center;
+  font-weight : bold;
+}
+
+#home-ebot-content{
+  line-height:90%;
+  font-size: 13px;
+  margin-bottom: 2%;
+}
+
+#home-event{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+#home-etop-date{
+  vertical-align: middle;
+  color: #FCAA00;
+  display : inline-block;
+  line-height : 1.3;
+  margin-top : 7%;
+}
+
+#home-month-split{
+  text-align: center;
+  background-color: #FCAA00;
+}
+
+#home-etop-map img{
+  height : 50%;
+  width : 50%;
+  display : block;
+  margin-left : auto;
+  margin-right : auto;
+  margin-top : 5%;
+}

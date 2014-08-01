@@ -20,6 +20,10 @@ phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, 
 			user.userInfo($scope.email, $scope.token);
 		};
 
+		$scope.fillHomePage = function(data){
+			alert("ok");
+		};
+
 		$scope.$on('userInfo', function(events, response){
 			if(response){
 				storage.storeUser(response, $scope.token);
@@ -32,7 +36,8 @@ phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, 
 
 		$scope.$on('eventsOfUser', function(events, response){
 			if(response){
-				//Construct dom
+				alert("event");
+				$scope.fillHomePage();
 			}else{
 				alert();
 			}
