@@ -2,10 +2,12 @@ phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, 
 
 		// Labels : English
 	  var engLabels = {
+			events : "Events"
 	  },
 
 	  // Labels : French
 	  frLabels = {
+			events : "Evènements"
 	  };
 
 	  // Setting the language

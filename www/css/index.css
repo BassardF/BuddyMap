@@ -399,8 +399,8 @@ input {
 }
 
 .home-etop-map img{
-  height : 70%;
-  width : 70%;
+  height : 55%;
+  width : 55%;
   display : block;
   margin-left : auto;
   margin-right : auto;
@@ -420,4 +420,32 @@ input {
   text-align : center;
   position : absolute;
   right : 38%;
+}
+
+.home-header{
+  background-color : #FCAA00;
+}
+
+.home-header-title{
+  text-align : center;
+  color: white;
+}
+
+.home-reglages-pic, .home-plus-pic{
+  width : 25px;
+  height : 25px;
+}
+
+.home-header-left div{
+  margin-left : 5%;
+}
+
+.home-header-right div{
+  margin-right :  5%;
+  text-align : right;
+}
+
+.home-empty-header{
+  height: 20px;
+  background-color : #FCAA00;
 }
