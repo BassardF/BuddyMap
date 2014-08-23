@@ -37,7 +37,7 @@ phonecatControllers.controller('HomeCtrl', function ($rootScope, $scope, event, 
 		$scope.$on('eventsOfUser', function(events, response){
 			if(response){
 				alert("event");
-				$scope.fillHomePage();
+				$scope.fillHomePage(response);
 			}else{
 				alert();
 			}
