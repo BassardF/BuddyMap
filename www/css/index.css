@@ -376,8 +376,8 @@ input {
 }
 
 .home-event{
-  margin-top: 2%;
-  margin-bottom: 2%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .home-etop-date{
@@ -448,4 +448,8 @@ input {
 .home-empty-header{
   height: 20px;
   background-color : #FCAA00;
+}
+
+.home-event-parity-1{
+  background-color : #f8f8f8;
 }
